@@ -19,8 +19,8 @@
         </div>
 
         <div class="box3">
-          <%= link_to "Show", book_path(list.id), method: :show %>
-          <%= link_to "Edit", book_path(list.id), method: :edit %>
+          <%= link_to "Show", book_path(list.id), method: :get %>
+          <%= link_to "Edit", book_path(list.id), method: :get %>
           <%= link_to "Destroy", book_path(list.id), method: :delete %>
 
         </div>
