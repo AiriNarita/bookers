@@ -32,15 +32,24 @@
 </div>
 
 
-<div class=new_form>
+<div class=form>
 
+  <% if @book.errors.any? %>
+  <%= @book.errors.count %> error prohibited this book from being saved:
+
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <%= form_with model:Book.new do |f| %>
 
-  <div class = new_header>
+  <div class = form_header>
     <h2>New book</h2>
   </div>
 
-  <div class="new_form">
+  <div class="form_wrapper">
     <div class="title_box">
       <div class="bookname">タイトル</div>
       <%= f.text_field :title %>
