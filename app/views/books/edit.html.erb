@@ -4,21 +4,32 @@
     <%= flash[:notice] %>
   </div>
 
+  <div class="edit_form">
+    <h1>Editing Book</h1>
 
-   <h1>Editing Book</h1>
+    <%= form_with model:@book do |f| %>
 
-   <%= form_with model:@book do |f| %>
+    <div class="field">
+      <h4>title</h4>
+      <%= f.text_field :title %>
+    </div>
 
+    <div class="field">
+      <h4>body</h4>
+      <%= f.text_area :body %>
+    <div>
+  </div>
 
-   <h4>title</h4>
-   <%= f.text_field :title %>
+   <div class="botton"></div>
+     <div class="submit">
+       <%= f.submit 'Update Book' %>
+     </div>
 
-   <h4>body</h4>
-   <%= f.text_area :body %>
+     <div class="select_bottun">
+        <p><%= link_to "Show", book_path(@book.id) %> |
+         <%= link_to "Back", books_path %> </p>
+     </div>
+       <% end %>
+    </div>
 
-
-
-   <%= f.submit 'Update Book' %>
-
-    <% end %>
 </div>

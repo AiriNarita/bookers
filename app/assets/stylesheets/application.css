@@ -62,7 +62,7 @@ h2{
     font-weight: bold;
 }
 
-.validation{
+.error_message{
   width: 450px;
   padding: 7px;
   padding-bottom: 0;
@@ -70,7 +70,7 @@ h2{
 
 }
 
-.validation h4 {
+.error_message h4 {
     color: #ffffff;
     background-color: red;
     padding: 17px;
@@ -78,7 +78,7 @@ h2{
     border: 2px solid red;
     border-bottom: none;
 }
-.validation ul {
+.error_message ul {
   background-color: #dcdcdc;
     list-style-type: disc;
     padding: 23px;
@@ -105,4 +105,12 @@ h2{
 
 .show p{
     margin:33px;
+}
+
+.field{
+    margin: 0px, 0px, 10px;
+}
+
+.submit{
+    padding:1px 6px;
 }

@@ -21,7 +21,7 @@
           <td> <%= list.body %> </td>
           <td><%= link_to "Show", book_path(list.id), method: :get %></td>
           <td> <%= link_to "Edit", edit_book_path(list.id), method: :get %></td>
-          <td> <%= link_to "Destroy", book_path(list.id), method: :delete,data: { confirm:"Are you sure?"} %></td>
+          <td> <%= link_to "Destroy", book_path(list.id), method: :delete,data: { confirm:"Are you sure"} %></td>
         </tr>
       </tbody>
     <% end %>
@@ -37,7 +37,7 @@
     <h2>New book</h2>
   </div>
 
-  <div class="validation">
+  <div class="error_message">
     <% if @book.errors.any? %>
     <h4><%= @book.errors.count %> error prohibited this book from being saved:</h4>
 
