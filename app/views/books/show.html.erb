@@ -1,27 +1,23 @@
 
-<div　class="message">
-  <%= flash[:notice] %>
-</div>
-
-<div class="show">
-
-  <div class="title_box">
-
-     <h2>タイトル</h2>
-     <p><%= @book.title %></p>
-
+<div class="edit">
+  <div class="message">
+    <%= flash[:notice] %>
   </div>
 
-  <div class="body_box">
-     <h2>本文</h2>
-     <p><%= @book.body %></p>
+  <div class="show">
 
-  </div>
+    <div class="title_box">
+      <p> <strong>title:</strong><%= @book.title %></p>
 
-  <div class="botton_box">
+    </div>
+
+    <div class="body_box">
+      <p><strong>body:</strong><%= @book.body %></p>
+    </div>
+
+    <div class="botton_box">
      <%= link_to "Edit", edit_book_path(@book.id)  %>
      <%= link_to "back", books_path %>
+    </div>
   </div>
-
-
 </div>

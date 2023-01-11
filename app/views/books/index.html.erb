@@ -1,12 +1,12 @@
 
-<div class="index">
+<div class="body">
+ <div class="index">
 
    <div class="header">
      <h1>Books</h1>
    </div>
 
    <table class="box_wrapper">
-    <% @books.each do |list| %>
      <thead>
         <tr>
           <th>title</th>
@@ -14,15 +14,14 @@
           <th></th>
         </tr>
       </thead>
+      <% @books.each do |list| %>
       <tbody>
         <tr>
           <td> <%= list.title %> </td>
           <td> <%= list.body %> </td>
-          <td>
-            <%= link_to "Show", book_path(list.id), method: :get %>
-            <%= link_to "Edit", edit_book_path(list.id), method: :get %>
-            <%= link_to "Destroy", book_path(list.id), method: :delete %>
-          </td>
+          <td><%= link_to "Show", book_path(list.id), method: :get %></td>
+          <td> <%= link_to "Edit", edit_book_path(list.id), method: :get %></td>
+          <td> <%= link_to "Destroy", book_path(list.id), method: :delete,data: { confirm:"Are you sure?"} %></td>
         </tr>
       </tbody>
     <% end %>
@@ -33,20 +32,26 @@
 
 <div class="form">
 
-  <% if @book.errors.any? %>
-  <%= @book.errors.count %> error prohibited this book from being saved:
+
+  <div class = form_header>
+    <h2>New book</h2>
+  </div>
+
+  <div class="validation">
+    <% if @book.errors.any? %>
+    <h4><%= @book.errors.count %> error prohibited this book from being saved:</h4>
 
     <ul>
       <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
-  <% end %>
-  <%= form_with model:Book.new do |f| %>
 
-  <div class = form_header>
-    <h2>New book</h2>
+  <% end %>
+
+
   </div>
+  <%= form_with model:Book.new do |f| %>
 
   <div class="form_wrapper">
     <div class="title_box">
@@ -65,4 +70,5 @@
   <%= f.submit 'Create Book' %>
   <%end %>
 
+ </div>
 </div>
