@@ -7,6 +7,17 @@
   <div class="edit_form">
     <h1>Editing Book</h1>
 
+    <div class="error_message">
+      <% if @book.errors.any? %>
+      <h4><%= @book.errors.count %>error prohibited this book from being saved:</h4>
+      <ul>
+       <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+       <% end %>
+     </ul>
+     <% end %>
+    </div>
+
     <%= form_with model:@book do |f| %>
 
     <div class="field">
@@ -24,12 +35,12 @@
      <div class="submit">
        <%= f.submit 'Update Book' %>
      </div>
+     <% end %>
 
      <div class="select_bottun">
         <p><%= link_to "Show", book_path(@book.id) %> |
          <%= link_to "Back", books_path %> </p>
      </div>
-       <% end %>
     </div>
 
 </div>
