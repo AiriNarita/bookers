@@ -18,8 +18,8 @@
 ![FRONT](./readme/assets/test-video.gif)
 
 ## 難しかったところ
-
 - Railsアプリケーションを自分で１から作る手順、組み立て
+![FRONT](./readme/assets/railsmvc.png)
 - link_to パスの書き方
 - バリデーションの設定
 
